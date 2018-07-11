@@ -1,6 +1,44 @@
 # Rest Tag Api
 Place this app in **nextcloud/apps/**
 
+## Tagging files using Rest Tag Api ##
+
+**curl example for systemtag:**
+
+Tagging:
+```
+curl -X POST -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": ["Coast", "Sea"]}' -H "Content-Type: application/json"
+```
+
+View tags Id:
+```
+curl -X GET -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg"
+{"18":["1","4"]}
+```
+
+**curl example for old tag system ! (vcategory):**
+
+Tagging:
+```
+curl -X POST -u admin:admin "http://localhost:8080/apps/resttagapi/api/v0/restapi/Photos/Coast.jpg" -d '{"tags": ["Coast", "Sea"]}' -H "Content-Type: application/json"
+```
+
+View tags:
+```
+curl -X GET -u admin:admin "http://localhost:8080/apps/resttagapi/api/v0/restapi/Photos/Coast.jpg"
+
+{"18":["Coast","Sea"]}
+```
+
+**Clear tags:**
+```
+curl -X POST -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": [
+```
+And check:
+```
+curl -X GET -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -H "Content-Type: application/json"
+```
+
 ## Building the app
 
 The app can be built by using the provided Makefile by running:
@@ -50,3 +88,8 @@ or:
     phpunit -c phpunit.integration.xml
 
 for integration tests
+
+# TODO #
+
+[] Add tags introspection UI
+[] Improve file type management
