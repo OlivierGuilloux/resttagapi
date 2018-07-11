@@ -1,0 +1,15 @@
+{
+    "name": "Rest Tag Api",
+    "description": "Allow tagging using a REST API",
+    "type": "project",
+    "license": "AGPL",
+    "authors": [
+        {
+            "name": "Olivier Guilloux"
+        }
+    ],
+    "require": {},
+    "require-dev": {
+        "phpunit/phpunit": "^5.4"
+    }
+}

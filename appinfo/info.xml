@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<info xmlns:xsi= "http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="https://apps.nextcloud.com/schema/apps/info.xsd">
+    <id>resttagapi</id>
+    <name>Rest Tag Api</name>
+    <summary>Allow tagging using a REST API</summary>
+    <description><![CDATA[Allow tagging using a REST API]]></description>
+    <version>0.0.1</version>
+    <licence>agpl</licence>
+    <author mail="olivier.guilloux@free.fr" >Olivier Guilloux</author>
+    <namespace>RestTagApi</namespace>
+    <category>tools</category>
+    <bugs>https://cloud.olivier-guilloux.fr</bugs>
+    <dependencies>
+        <nextcloud min-version="13" max-version="13"/>
+    </dependencies>
+    <navigations>
+        <navigation>
+            <name>Rest Tag Api</name>
+            <route>resttagapi.page.index</route>
+        </navigation>
+    </navigations>
+</info>
