@@ -112,6 +112,8 @@ class RestTagApiController extends ApiController {
      */
 	public function getFileTags($path) {
         $node = Filesystem::getView()->getFileInfo($path);
-        return new DataResponse($this->tagMapper->getTagIdsForObjects($node->getId(), $node->getType()));
+        // TODO : improve
+        $fileType = "files"; //$node->getType();
+        return new DataResponse($this->tagMapper->getTagIdsForObjects($node->getId(), $fileType));
     }
 }
