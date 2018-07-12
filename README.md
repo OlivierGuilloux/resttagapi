@@ -7,12 +7,12 @@ Place this app in **nextcloud/apps/**
 
 Tagging:
 ```
-curl -X POST -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": ["Coast", "Sea"]}' -H "Content-Type: application/json"
+curl -X POST -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": ["Coast", "Sea"]}' -H "Content-Type: application/json"
 ```
 
 View tags Id:
 ```
-curl -X GET -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg"
+curl -X GET -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg"
 {"18":["1","4"]}
 ```
 
@@ -20,23 +20,23 @@ curl -X GET -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi
 
 Tagging:
 ```
-curl -X POST -u admin:admin "http://localhost:8080/apps/resttagapi/api/v0/restapi/Photos/Coast.jpg" -d '{"tags": ["Coast", "Sea"]}' -H "Content-Type: application/json"
+curl -X POST -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v0/restapi/Photos/Coast.jpg" -d '{"tags": ["Coast", "Sea"]}' -H "Content-Type: application/json"
 ```
 
 View tags:
 ```
-curl -X GET -u admin:admin "http://localhost:8080/apps/resttagapi/api/v0/restapi/Photos/Coast.jpg"
+curl -X GET -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v0/restapi/Photos/Coast.jpg"
 
 {"18":["Coast","Sea"]}
 ```
 
 **Clear tags:**
 ```
-curl -X POST -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": [
+curl -X POST -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": [
 ```
 And check:
 ```
-curl -X GET -u admin:admin "http://localhost:8080/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -H "Content-Type: application/json"
+curl -X GET -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -H "Content-Type: application/json"
 ```
 
 ## Building the app
@@ -91,5 +91,5 @@ for integration tests
 
 # TODO #
 
-[] Add tags introspection UI
-[] Improve file type management
+* Add tags introspection UI
+* Improve file type management
