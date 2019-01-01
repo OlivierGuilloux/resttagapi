@@ -67,10 +67,44 @@ class RestTagApiController extends ApiController {
         }
         return $tagIds;
     }
+    /**
+	 * Set the info of the specified file path
+	 * The passed tags are absolute, which means they will
+	 * replace the actual tag selection.
+	 *
+	 * @NoAdminRequired
+	 * @NoCSRFRequired
+	 * @StrictCookieRequired
+	 *
+	 * @param string $path path 
+	 * @param array  $tags array of tags name
+	 * @return DataResponse
+	 */
+	public function setFileTags($path, $tags = null) {
+        // get node from path
+        $node = Filesystem::getView()->getFileInfo($path);
+        // set file id
+        if($node) {
+            $fileId = $node->getId();
+            // TODO : improve
+            $fileType = "files"; //$node->getType();
+            // Cleanup tags
+            $fileTags = $this->tagMapper->getTagIdsForObjects($fileId, $fileType);
+            if($fileTags) {
+                $this->tagMapper->unassignTags($fileId, $fileType, $fileTags[$fileId]);
+            }
+            // assign new tags
+            $tagIds = $this->getTagIds($tags);
+            $this->tagMapper->assignTags($fileId, $fileType, $tagIds);
+            return new DataResponse($this->tagMapper->getTagIdsForObjects($fileId, $fileType));
+        }
+        return new DataResponse("Not found \"$path\"");
+	}
+
 	/**
 	 * Updates the info of the specified file path
 	 * The passed tags are absolute, which means they will
-	 * replace the actual tag selection.
+	 * complete the actual tag selection.
 	 *
 	 * @NoAdminRequired
 	 * @NoCSRFRequired
@@ -88,11 +122,6 @@ class RestTagApiController extends ApiController {
             $fileId = $node->getId();
             // TODO : improve
             $fileType = "files"; //$node->getType();
-            // Cleanup tags
-            $fileTags = $this->tagMapper->getTagIdsForObjects($fileId, $fileType);
-            if($fileTags) {
-                $this->tagMapper->unassignTags($fileId, $fileType, $fileTags[$fileId]);
-            }
             // assign new tags
             $tagIds = $this->getTagIds($tags);
             $this->tagMapper->assignTags($fileId, $fileType, $tagIds);

@@ -16,6 +16,11 @@ curl -X GET -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/
 {"18":["1","4"]}
 ```
 
+Update tags:
+```
+curl -X PUT -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": ["Sun"]}' -H "Content-Type: application/json"
+```
+
 **curl example for old tag system ! (vcategory):**
 
 Tagging:

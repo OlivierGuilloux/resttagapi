@@ -5,14 +5,14 @@
     <name>Rest Tag Api</name>
     <summary>Allow tagging using a REST API</summary>
     <description><![CDATA[Allow tagging using a REST API]]></description>
-    <version>0.0.1</version>
+    <version>0.0.2</version>
     <licence>agpl</licence>
     <author mail="olivier.guilloux@free.fr" >Olivier Guilloux</author>
     <namespace>RestTagApi</namespace>
     <category>tools</category>
     <bugs>https://cloud.olivier-guilloux.fr</bugs>
     <dependencies>
-        <nextcloud min-version="13" max-version="13"/>
+        <nextcloud min-version="13" max-version="15"/>
     </dependencies>
     <navigations>
         <navigation>

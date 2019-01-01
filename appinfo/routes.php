@@ -11,7 +11,8 @@ return [
     'routes' => [
 	   ['name' => 'page#index', 'url' => '/', 'verb' => 'GET'],
 	   ['name' => 'page#do_echo', 'url' => '/echo', 'verb' => 'POST'],
-	   ['name' => 'RestTagApi#updateFileTags', 'url' => '/api/v1/restapi/{path}', 'verb' => 'POST', 'requirements' => ['path' => '.+']],
+	   ['name' => 'RestTagApi#setFileTags', 'url' => '/api/v1/restapi/{path}', 'verb' => 'POST', 'requirements' => ['path' => '.+']],
+	   ['name' => 'RestTagApi#updateFileTags', 'url' => '/api/v1/restapi/{path}', 'verb' => 'PUT', 'requirements' => ['path' => '.+']],
 	   ['name' => 'RestTagApi#getFileTags', 'url' => '/api/v1/restapi/{path}', 'verb' => 'GET', 'requirements' => ['path' => '.+']],
 	   ['name' => 'RestOldTagApi#updateFileTags', 'url' => '/api/v0/restapi/{path}', 'verb' => 'POST', 'requirements' => ['path' => '.+']],
 	   ['name' => 'RestOldTagApi#getFileTags', 'url' => '/api/v0/restapi/{path}', 'verb' => 'GET', 'requirements' => ['path' => '.+']],
