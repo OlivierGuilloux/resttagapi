@@ -94,6 +94,12 @@ or:
 
 for integration tests
 
+# Versions #
+
+## 0.0.4 ##
+
+* Add tags introspection with stats (number of file tagged foreach tags)
+
 # TODO #
 
 * Add tags introspection UI
