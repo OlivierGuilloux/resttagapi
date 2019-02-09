@@ -145,4 +145,23 @@ class RestTagApiController extends ApiController {
         $fileType = "files"; //$node->getType();
         return new DataResponse($this->tagMapper->getTagIdsForObjects($node->getId(), $fileType));
     }
+    /**
+	 * Remove tagsId list
+	 *
+	 * @NoAdminRequired
+	 * @NoCSRFRequired
+	 * @StrictCookieRequired
+	 *
+	 * @param string $id tag id 
+     * @return 
+	 */
+    public function removeTag($id) {
+        try {
+            $this->tagManager->deleteTags($id);
+            return new DataResponse("Tag $id deleted");
+        } catch (\OCP\SystemTag\TagNotFoundException $e){
+            return new DataResponse("Tag $id does not exist");
+        }
+    }
+
 }

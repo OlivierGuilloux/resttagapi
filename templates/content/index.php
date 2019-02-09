@@ -14,6 +14,7 @@ style('resttagapi', 'bootstrap.min');
   <table id="tagsStat" class="dataframe dt">
     <thead>
       <tr>
+        <th><input type="checkbox" name="resttagapi_checkAll" id="resttagapi_checkAll" alt="check/unckeck all" title="check/unckeck all" /></th>
         <th>Name</th>
         <th>Nb</th>
       </tr>
@@ -23,6 +24,7 @@ style('resttagapi', 'bootstrap.min');
       foreach($_['tagsStats'] as $entry){ 
         ?>
         <tr>
+          <td><input type="checkbox" value="<? echo $entry['id']; ?>" name="resttagapi_ids" class="resttagapi_ids" /></td>
           <td><? echo $entry['name']; ?></td>
           <td><? echo $entry['nb']; ?></td>
         </tr>
@@ -32,3 +34,4 @@ style('resttagapi', 'bootstrap.min');
     </tbody>
   </table>
 </div>
+<input type="button" name="delete" value="Delete selected tags" id="resttagapi_actionDelete" class="resttagapi_actionDelete" title="Delete selected tags" />

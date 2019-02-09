@@ -69,5 +69,4 @@ class PageController extends Controller {
 		$response->setContentSecurityPolicy($policy);
 		return $response;
 	}
-
 }

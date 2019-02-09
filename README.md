@@ -35,6 +35,11 @@ curl -X GET -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/
 {"18":["Coast","Sea"]}
 ```
 
+Delete a tag:
+```
+curl -X DELETE -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v1/restapi/tags/20"
+```
+
 **Clear tags:**
 ```
 curl -X POST -u admin:admin "http://localhost:8080/index.php/apps/resttagapi/api/v1/restapi/Photos/Coast.jpg" -d '{"tags": [
@@ -95,6 +100,10 @@ or:
 for integration tests
 
 # Versions #
+
+## 0.0.5 ##
+
+* Add remove checkboxes
 
 ## 0.0.4 ##
 

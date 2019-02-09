@@ -31,6 +31,7 @@ class DBTagService {
 		$builder = $this->connection->getQueryBuilder();
         $query = $builder->selectAlias($builder->createFunction('COUNT(t.id)'), 'nb')
             ->selectAlias('t.name', 'name')
+            ->selectAlias('t.id', 'id')
             ->from('systemtag', 't')
             ->innerJoin('t', 'systemtag_object_mapping', 'm', $builder->expr()->eq('t.id', 'm.systemtagid'))
             ->groupBy('t.id')
@@ -38,4 +39,5 @@ class DBTagService {
         $result = $query->execute(); 
         return $result->fetchAll();
     }
+
 }

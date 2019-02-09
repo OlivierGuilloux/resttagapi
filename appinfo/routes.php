@@ -14,6 +14,7 @@ return [
 	   ['name' => 'RestTagApi#setFileTags', 'url' => '/api/v1/restapi/{path}', 'verb' => 'POST', 'requirements' => ['path' => '.+']],
 	   ['name' => 'RestTagApi#updateFileTags', 'url' => '/api/v1/restapi/{path}', 'verb' => 'PUT', 'requirements' => ['path' => '.+']],
 	   ['name' => 'RestTagApi#getFileTags', 'url' => '/api/v1/restapi/{path}', 'verb' => 'GET', 'requirements' => ['path' => '.+']],
+	   ['name' => 'RestTagApi#removeTag', 'url' => '/api/v1/restapi/tags/{id}', 'verb' => 'DELETE', 'requirements' => ['id' => '\d+']],
 	   ['name' => 'RestOldTagApi#updateFileTags', 'url' => '/api/v0/restapi/{path}', 'verb' => 'POST', 'requirements' => ['path' => '.+']],
 	   ['name' => 'RestOldTagApi#getFileTags', 'url' => '/api/v0/restapi/{path}', 'verb' => 'GET', 'requirements' => ['path' => '.+']],
     ]
