@@ -11,7 +11,7 @@ style('resttagapi', 'bootstrap.min');
   <h1>Tags list</h1>
   
   <hr/>
-  <table id="tagsStat" class="dataframe dt">
+  <table id="tagsStat" class="display datatable dt" role="grid">
     <thead>
       <tr>
         <th><input type="checkbox" name="resttagapi_checkAll" id="resttagapi_checkAll" alt="check/unckeck all" title="check/unckeck all" /></th>
@@ -25,7 +25,7 @@ style('resttagapi', 'bootstrap.min');
         ?>
         <tr>
           <td><input type="checkbox" value="<? echo $entry['id']; ?>" name="resttagapi_ids" class="resttagapi_ids" /></td>
-          <td><? echo $entry['name']; ?></td>
+          <td><a href="/index.php/apps/files/?dir=<? echo $entry['id']; ?>&view=systemtagsfilter" alt="View" title"View"><? echo $entry['name']; ?></a></td>
           <td><? echo $entry['nb']; ?></td>
         </tr>
         <?php

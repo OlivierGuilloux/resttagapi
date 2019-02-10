@@ -101,6 +101,10 @@ for integration tests
 
 # Versions #
 
+## 0.0.6 ##
+
+* Improve remove tag, add link to systemtagsfilter view
+
 ## 0.0.5 ##
 
 * Add remove checkboxes

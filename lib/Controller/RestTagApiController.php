@@ -157,6 +157,9 @@ class RestTagApiController extends ApiController {
 	 */
     public function removeTag($id) {
         try {
+            foreach($this->tagMapper->getObjectIdsForTags($id, 'files') as $objectId) {
+                $this->tagMapper->unassignTags($objectId, 'files', $id);
+            }
             $this->tagManager->deleteTags($id);
             return new DataResponse("Tag $id deleted");
         } catch (\OCP\SystemTag\TagNotFoundException $e){
