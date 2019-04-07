@@ -101,6 +101,10 @@ for integration tests
 
 # Versions #
 
+## 0.0.7 ##
+
+* PoC tags multiple files with js/app.js & js/filelist.js replacing apps/files/js/apps.js and apps/files/js/filelist.js
+
 ## 0.0.6 ##
 
 * Improve remove tag, add link to systemtagsfilter view
