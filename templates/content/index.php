@@ -25,8 +25,8 @@ style('resttagapi', 'bootstrap.min');
         ?>
         <tr>
           <td><input type="checkbox" value="<? echo $entry['id']; ?>" name="resttagapi_ids" class="resttagapi_ids" /></td>
-          <td><a href="/index.php/apps/files/?dir=<? echo $entry['id']; ?>&view=systemtagsfilter" alt="View" title"View"><? echo $entry['name']; ?></a></td>
-          <td><? echo $entry['nb']; ?></td>
+          <td><a href="/index.php/apps/files/?dir=<?php echo $entry['id']; ?>&view=systemtagsfilter" alt="View" title"View"><?php echo $entry['name']; ?></a></td>
+          <td><?php echo $entry['nb']; ?></td>
         </tr>
         <?php
       }
