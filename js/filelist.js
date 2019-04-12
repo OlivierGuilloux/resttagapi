@@ -948,8 +948,7 @@
 		 * Event handler for when clicking on "Tags" for the selected files
 		 */
 		_onClickTagsSelected: function(event) {
-			var files = _.pluck(this.getSelectedFiles(), 'name');
-			this.do_tags(files);
+			this.do_tags();
 			event.preventDefault();
 		},
 
@@ -2809,9 +2808,6 @@
 
         do_tags:function(files) {
 			var self = this;
-			if (files && files.substr) {
-				files=[files];
-            }
             console.log("Display input field");
             console.log($("#tags-value").length);
             if($('#tags-value') && $("#tags-value").length == 0) {
@@ -2826,8 +2822,8 @@
                 });
                 console.log(trimTagsValue);
                 var tags = {'tags':  trimTagsValue};
-                console.log(files);
 		        var dir = self.getCurrentDirectory();
+			    var files = _.pluck(self.getSelectedFiles(), 'name');
                 $.each (files, function(index, file) {
                     var path = dir +'/'+ file;
                     console.log(path);
