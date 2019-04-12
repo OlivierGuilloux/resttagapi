@@ -2824,6 +2824,7 @@
                 var tags = {'tags':  trimTagsValue};
 		        var dir = self.getCurrentDirectory();
 			    var files = _.pluck(self.getSelectedFiles(), 'name');
+                var messages = [];
                 $.each (files, function(index, file) {
                     var path = dir +'/'+ file;
                     console.log(path);
@@ -2832,12 +2833,15 @@
                         'method': 'PUT',
                         'data': tags,
                         'dataTypes': 'application/json',
+                        'async': false,
                     }).done(function(){
-                        console.log(file +" tag done");
+                        messages.push(file +" tag done");
                     }).fail(function(){
-                        console.log(file +" tag fail");
+                        messages.push(file +" tag done");
                     });
                 });
+                console.log(messages);
+                OC.dialogs.alert(messages.join(", "), "Tags done");
             });
         
         },
